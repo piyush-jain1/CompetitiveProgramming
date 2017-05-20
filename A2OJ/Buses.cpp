@@ -9,19 +9,8 @@ using namespace std;
 #define REP(i,n) for(long long i=0;i<(n);i++)
 #define FOR(i,a,b) for(long long i=(a);i<=(b);i++)
 #define FORD(i,a,b) for(int i=(a);i>=(b);i--)
-inline bool EQ(double a, double b) { return fabs(a-b) < 1e-9; }
-const int INF = 1<<29;
 #define ll long long
 #define int_64 uint64_t
-inline ll two(ll n) { return 1 << n; }
-inline ll test(ll n, ll b) { return (n>>b)&1; }
-inline void setBit(ll & n, ll b) { n |= two(b); }
-inline void unsetBit(ll & n, ll b) { n &= ~two(b); }
-inline ll last_bit(ll n) { return n & (-n); }
-inline ll ones(ll n) { int res = 0; while(n && ++res) n-=n&(-n); return res; }
-inline bool sortDown(ll x,ll y){return x>y;}
-template<class T> void chmax(T & a, const T & b) { a = max(a, b); }
-template<class T> void chmin(T & a, const T & b) { a = min(a, b); }
 bool wayToSort(ll i, ll j) { return i > j; }
 #define PI 3.14159265
 // sorting vector of pairs
@@ -32,32 +21,51 @@ bool sortbysecdesc(const pair<ll,ll> &a,const pair<ll,ll> &b)	{    return a.seco
 ll * p = std::upper_bound( a, a+n, x );
 ll j = p - a;    // index
 */
+#define mod 1000000007
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+ll a[1010][1010];
+
+ll modulo(ll i, ll k)
+{
+	return (i%k == 0) ? i : i%k;
+}
 int main()
-{	
-	// std::cout << std::setprecision(2);
- //  	std::cout << std::fixed;
-	std::ios::sync_with_stdio(false);
-	cin.tie(0);
-	std::vector<ll> v;
-	v.pb(0);
-	while(v.size() < 1005)
-	{	
-		ll k = v.size();
-		REP(i,k)
-		{
-			if(v[i] == 0)	v.pb(1);
-			else	v.pb(0);
-		}
+{
+	ll n,k,d;	cin>>n>>k>>d;
+	if(n > pow(k,d))
+	{
+		cout<<-1<<endl;
+		return 0;
 	}
-	ll q;	cin>>q;
-	while(q--)
+	ll i = d;
+
+	while(i >= 1)
 	{	
-		ll x;	cin>>x;
-		cout<<v[x]<<endl;
+		ll j = 1;
+		ll freq = pow(k,d-i);
+		// DEBUG(freq);
+		ll curr = 1;
+		while(j <= n)
+		{
+			a[i][j] = curr;
+			// DEBUG(a[i][j]);
+			if(j%freq == 0)
+			{
+				curr = modulo(curr+1,k);
+			}
+			j++;
+		}
+		i--;
+	}
+	FOR(i,1,d)
+	{
+		FOR(j,1,n)
+		{
+			printf("%lld ",a[i][j]);
+		}
+		printf("\n");
 	}
 	return 0;
 
-	
 }
