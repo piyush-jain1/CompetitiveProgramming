@@ -2,7 +2,7 @@
 #include <math.h>
 #include <string>
 #include <unordered_map>
-#define fast_io std::ios::sync_with_stdio(false),cint.tie(NULL),cout.tie(NULL);
+#define fast_io std::ios::sync_with_stdio(false);	cint.tie(NULL); cout.tie(NULL);
 #define pb push_back
 #define mp make_pair
 using namespace std; 
@@ -26,7 +26,7 @@ ll j = p - a;    // index
 
 int main()
 {	
-	fast_io;
+	// cout << std::setprecision(2)<<fixed;
 
 	
 }

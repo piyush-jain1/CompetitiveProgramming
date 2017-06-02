@@ -2,7 +2,6 @@
 #include <math.h>
 #include <string>
 #include <unordered_map>
-#define fast_io std::ios::sync_with_stdio(false),cint.tie(NULL),cout.tie(NULL);
 #define pb push_back
 #define mp make_pair
 using namespace std; 
@@ -22,11 +21,29 @@ bool sortbysecdesc(const pair<ll,ll> &a,const pair<ll,ll> &b)	{    return a.seco
 ll * p = std::upper_bound( a, a+n, x );
 ll j = p - a;    // index
 */
+#define mod 1000000007
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-int main()
-{	
-	fast_io;
 
-	
+ll a[100010], b[100010];
+int main()
+{
+	ll n;	cin>>n;
+	REP(i,n)
+	{
+		cin>>b[i];
+		a[i] = b[i];
+	}
+	sort(b,b+n);
+	ll count = 0;
+	REP(i,n)
+	{
+		if(a[i] != b[i])	count++;
+	}
+	if(count <= 2)
+	{
+		cout<<"YES"<<endl;
+	}
+	else	cout<<"NO"<<endl;
+	return 0;
 }

@@ -2,7 +2,6 @@
 #include <math.h>
 #include <string>
 #include <unordered_map>
-#define fast_io std::ios::sync_with_stdio(false),cint.tie(NULL),cout.tie(NULL);
 #define pb push_back
 #define mp make_pair
 using namespace std; 
@@ -16,17 +15,41 @@ bool wayToSort(ll i, ll j) { return i > j; }
 #define PI 3.14159265
 // sorting vector of pairs
 bool sortinrev(const pair<ll,ll> &a, const pair<ll,ll> &b)	{    return (a.first > b.first);	}
-bool sortbysec(const pair<ll,ll> &a, const pair<ll,ll> &b)	{   return (a.second < b.second);		}	
 bool sortbysecdesc(const pair<ll,ll> &a,const pair<ll,ll> &b)	{    return a.second>b.second;	}
 /* First number in array a which is greater than x
 ll * p = std::upper_bound( a, a+n, x );
 ll j = p - a;    // index
 */
+#define mod 1000000007
+const int MAX = 100000;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 int main()
-{	
-	fast_io;
+{
+	ll a,b;	cin>>a>>b;
+	ll k = 0;
+	while(a > 0 and b > 0)
+	{	
+		if(a == b)
+		{
+			cout<<a/b+k<<endl;
+			return 0;
+		}
+		if(a > b)
+		{
+			k += (a/b);
+			a -= (a/b)*b;
+		}
+		else
+		{
+			 k += (b/a);
+			 b -= (b/a)*a;
+		}
 
-	
+		// DEBUG(a);
+		// DEBUG(b);
+		// DEBUG(k);
+	}
+	cout<<k<<endl;
+	return 0;
 }

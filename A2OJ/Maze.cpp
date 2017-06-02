@@ -2,7 +2,6 @@
 #include <math.h>
 #include <string>
 #include <unordered_map>
-#define fast_io std::ios::sync_with_stdio(false),cint.tie(NULL),cout.tie(NULL);
 #define pb push_back
 #define mp make_pair
 using namespace std; 
@@ -22,11 +21,73 @@ bool sortbysecdesc(const pair<ll,ll> &a,const pair<ll,ll> &b)	{    return a.seco
 ll * p = std::upper_bound( a, a+n, x );
 ll j = p - a;    // index
 */
+#define mod 1000000007
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-int main()
-{	
-	fast_io;
 
-	
+char a[510][510];
+bool visited[510][510] = {false};
+ll tot = 0;
+ll s,k;
+void dfs(ll x, ll y)
+{
+	visited[x][y] = true;
+	tot++;
+	if(tot > s-k)	a[x][y] = 'X';
+	if(!visited[x+1][y] and a[x+1][y] == '.')
+	{
+		dfs(x+1,y);
+	}
+	if(!visited[x-1][y] and a[x-1][y] == '.')
+	{
+		dfs(x-1,y);
+	}
+	if(!visited[x][y+1] and a[x][y+1] == '.')
+	{
+		dfs(x,y+1);
+	}
+	if(!visited[x][y-1] and a[x][y-1] == '.')
+	{
+		dfs(x,y-1);
+	}
+
+}
+int main()
+{
+	ll n,m;	cin>>n>>m>>k;
+	FOR(j,0,m+1)	
+	{
+		a[0][j] = '#';
+		a[n+1][j] = '#';
+	}
+	FOR(i,0,n+1)
+	{
+		a[i][0] = '#';
+		a[i][m+1] = '#';
+	}	
+	s = 0;
+	ll x,y;
+	FOR(i,1,n)
+	{
+		FOR(j,1,m)
+		{
+			cin>>a[i][j];
+			if(a[i][j] == '.')
+			{
+				x = i;
+				y = j;
+				s++;
+			}
+		}
+	}
+	dfs(x,y);
+	FOR(i,1,n)
+	{
+		FOR(j,1,m)
+		{
+			cout<<a[i][j];
+		}
+		cout<<endl;
+	}
+	return 0;
 }

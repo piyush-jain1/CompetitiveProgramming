@@ -2,7 +2,6 @@
 #include <math.h>
 #include <string>
 #include <unordered_map>
-#define fast_io std::ios::sync_with_stdio(false),cint.tie(NULL),cout.tie(NULL);
 #define pb push_back
 #define mp make_pair
 using namespace std; 
@@ -26,7 +25,38 @@ ll j = p - a;    // index
 
 int main()
 {	
-	fast_io;
+	// std::cout << std::setprecision(2);
+ //  	std::cout << std::fixed;
+	std::ios::sync_with_stdio(false);
+	cin.tie(0);
+	cout.tie(0);
+	ll r;	cin>>r;
+	while(r--)
+	{
+		ll l;	cin>>l;
+		string s;	cin>>s;
+		bool valid = true;
+		std::vector<char> v;
+		char prev = 'T';
+		REP(i,l)
+		{
+			if(s[i] != '.')
+			{
+				if(s[i] == prev)
+				{
+					valid = false;
+					break;
+				}
+				else
+				{
+					prev = s[i];
+				}
+			}
+		}
+		if(valid and prev == 'T')	cout<<"Valid"<<endl;
+		else cout<<"Invalid"<<endl;
+	}
+	return 0;
 
 	
 }

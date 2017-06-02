@@ -2,7 +2,6 @@
 #include <math.h>
 #include <string>
 #include <unordered_map>
-#define fast_io std::ios::sync_with_stdio(false),cint.tie(NULL),cout.tie(NULL);
 #define pb push_back
 #define mp make_pair
 using namespace std; 
@@ -16,17 +15,45 @@ bool wayToSort(ll i, ll j) { return i > j; }
 #define PI 3.14159265
 // sorting vector of pairs
 bool sortinrev(const pair<ll,ll> &a, const pair<ll,ll> &b)	{    return (a.first > b.first);	}
-bool sortbysec(const pair<ll,ll> &a, const pair<ll,ll> &b)	{   return (a.second < b.second);		}	
 bool sortbysecdesc(const pair<ll,ll> &a,const pair<ll,ll> &b)	{    return a.second>b.second;	}
 /* First number in array a which is greater than x
 ll * p = std::upper_bound( a, a+n, x );
 ll j = p - a;    // index
 */
+#define mod 1000000007
+#define MAX 100000
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+ll a[MAX+10];
+ll b[MAX+10];
+ll c[MAX+10];
 int main()
-{	
-	fast_io;
-
-	
+{
+	ll n,m;	cin>>n>>m;
+	bool increase = true;
+	FOR(i,1,n)	cin>>a[i];
+	ll index = 1;
+	b[1] = 1;
+	FOR(i,2,n)
+	{		
+		if(a[i] > a[i-1])	index = i;
+		b[i] = index;
+	}
+	index = n;
+	c[n] = n;
+	FORD(i,n-1,1)
+	{	
+		if(a[i] > a[i+1])	index = i;
+		c[i] = index;
+	}
+	// FOR(i,1,n)	cout<<b[i]<<" ";
+	// cout<<endl;
+	// FOR(i,1,n)	cout<<c[i]<<" ";
+	// cout<<endl;
+	while(m--)
+	{
+		ll l,r;	cin>>l>>r;
+		if(b[r] <= c[l])	cout<<"Yes"<<endl;
+		else cout<<"No"<<endl;
+	}
+	return 0;
 }

@@ -2,7 +2,6 @@
 #include <math.h>
 #include <string>
 #include <unordered_map>
-#define fast_io std::ios::sync_with_stdio(false),cint.tie(NULL),cout.tie(NULL);
 #define pb push_back
 #define mp make_pair
 using namespace std; 
@@ -24,9 +23,17 @@ ll j = p - a;    // index
 */
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+ll a[110];
 int main()
 {	
-	fast_io;
-
-	
+	std::ios::sync_with_stdio(false);
+	cin.tie(0);
+	cout.tie(0);
+	ll t;	cin>>t;
+	while(t--)
+	{
+		ll n,q;	cin>>n>>q;
+		
+	}
 }

@@ -2,7 +2,7 @@
 #include <math.h>
 #include <string>
 #include <unordered_map>
-#define fast_io std::ios::sync_with_stdio(false),cint.tie(NULL),cout.tie(NULL);
+#define fast_io std::ios::sync_with_stdio(false);	cint.tie(NULL); cout.tie(NULL);
 #define pb push_back
 #define mp make_pair
 using namespace std; 
@@ -23,10 +23,22 @@ ll * p = std::upper_bound( a, a+n, x );
 ll j = p - a;    // index
 */
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+ 
 int main()
 {	
-	fast_io;
-
+	// cout << std::setprecision(2)<<fixed;
+	ll t;	cin>>t;
+	while(t--)
+	{
+		ll n,m;	cin>>n>>m;
+		while(m--)
+		{
+			ll a,b;	cin>>a>>b;	
+		}
+		if(n%2)	cout<<"no"<<endl;
+		else cout<<"yes"<<endl;
+	}
+	return 0;
 	
-}
+} 
+
