@@ -1,0 +1,5 @@
+2
+5
+act cat tac god dog
+3
+act cat tac

@@ -2,7 +2,7 @@
 #include <math.h>
 #include <string>
 #include <unordered_map>
-#define fast_io std::ios::sync_with_stdio(false),cint.tie(NULL),cout.tie(NULL);
+#define fast_io std::ios::sync_with_stdio(false),cin.tie(NULL),cout.tie(NULL);
 #define pb push_back
 #define mp make_pair
 using namespace std; 
