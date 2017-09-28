@@ -45,6 +45,25 @@ ll j = p - a;    // index
 int main()
 {	
 	fast_io;
-
+	int t;	cin>>t;
+	int cost[30];
+	while(t--)
+	{
+		REP(i,26)	cin>>cost[i];
+		int cnt[30] = {0};
+		string s;	cin>>s;
+		int n = s.length();
+		REP(i,n)
+		{
+			cnt[s[i]-'a']++;
+		}
+		int ans = 0;
+		REP(i,26)
+		{
+			if(cnt[i] == 0)	ans += cost[i];
+		}
+		cout<<ans<<endl;
+	}
+	return 0;
 	
 }

@@ -45,6 +45,39 @@ ll j = p - a;    // index
 int main()
 {	
 	fast_io;
-
+	ll n,k;	cin>>n>>k;
+	std::vector<pair<ll,ll>> c;
+	REP(i,n)
+	{
+		ll temp;	cin>>temp;
+		c.pb(mp(temp,i+1));
+	}
+	sort(all(c), sortinrev);
+	ll newpos[n+10];
+	ll cost = 0;
+	ll index = k+1;
+	bool flag[2*n+10];
+	fill(flag, flag+2*n+5, true);
+	FOR(i,0,n-1)
+	{	
+		while(flag[index] == false)	index++;
+		if(index >= c[i].second)
+		{
+			newpos[c[i].second] = index;
+		}
+		else
+		{
+			newpos[c[i].second] = c[i].second;
+		}
+		flag[newpos[c[i].second]] = false;
+		cost += ((c[i].first)*(newpos[c[i].second]-c[i].second));
+	}
+	cout<<cost<<endl;
+	FOR(i,1,n)
+	{
+		cout<<newpos[i]<<" ";
+	}
+	cout<<endl;
+	return 0;
 	
 }

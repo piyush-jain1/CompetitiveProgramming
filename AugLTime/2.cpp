@@ -42,9 +42,30 @@ ll j = p - a;    // index
 */
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+ll n;
+
+unsigned ll calc(unsigned ll k)
+{	
+	ll i = 0;
+	unsigned ll pos = 0;
+	while(i <= ceil(log2(k)))
+	{
+		if((k >> i) & 1)
+		{	
+			pos += (unsigned ll)pow(2LL,n-i-1LL);
+		}
+		i++;
+	}
+	return pos;
+}
 int main()
 {	
 	fast_io;
-
-	
+	int q;	cin>>q;
+	while(q--)
+	{
+		unsigned ll k;	cin>>n>>k;
+		cout<<calc(k)<<endl;
+	}
+	return 0;
 }

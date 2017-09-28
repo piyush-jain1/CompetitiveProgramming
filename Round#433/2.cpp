@@ -45,6 +45,29 @@ ll j = p - a;    // index
 int main()
 {	
 	fast_io;
-
+	ll n,k;	cin>>n>>k;
+	ll minm, maxm;
+	if(k == 0)
+	{
+		cout<<0<<" "<<0<<endl;
+		return 0;
+	}
+	if(n == k)	minm = 0;
+	else minm = 1;
+	if(k < (n+1)/3)	maxm = 2*k;
+	else
+	{
+		if(n%3 == 1)
+		{
+			if(k == (n+1)/3)	maxm = 2*k;
+			else	
+			{
+				maxm = n -k;
+			}
+		}
+		else maxm = n-k;
+	}
+	cout<<minm<<" "<<maxm<<endl;
+	return 0;
 	
 }

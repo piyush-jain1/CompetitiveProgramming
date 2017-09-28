@@ -45,6 +45,20 @@ ll j = p - a;    // index
 int main()
 {	
 	fast_io;
-
+	int r,d;	cin>>r>>d;
+	int n;	cin>>n;
+	int cnt = 0;
+	REP(i,n)
+	{	
+		double x,y,rad;
+		cin>>x>>y>>rad;
+		double p = (double)sqrt((double)((x*x) + (y*y)));
+		if(p+rad <= (double)r and p-rad >= (double)(r-d))
+		{
+			cnt++;
+		}
+	}
+	cout<<cnt<<endl;
+	return 0;
 	
 }

@@ -45,6 +45,17 @@ ll j = p - a;    // index
 int main()
 {	
 	fast_io;
-
-	
+	int n;	cin>>n;
+	int x;
+	if(n%2 == 0)	x = n/2 - 1;
+	else	x = n/2;
+	FORD(i,x,0)
+	{
+		if(gcd(i,n-i) == 1)
+		{
+			cout<<i<<" "<<n-i<<endl;
+			break;
+		}
+	}
+	return 0;
 }

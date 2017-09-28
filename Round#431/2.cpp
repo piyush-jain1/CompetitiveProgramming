@@ -45,6 +45,32 @@ ll j = p - a;    // index
 int main()
 {	
 	fast_io;
-
-	
+	int n;	cin>>n;
+	int a[n+10];
+	REP(i,n)	cin>>a[i];
+	vector<pair<double,int>> s;
+	set<double> sl;
+	if(n == 3)
+	{	
+		if((double)(a[2]-a[0])/(double)(2) != (double)(a[1]-a[0]))	cout<<"Yes"<<endl;
+		else cout<<"No"<<endl;
+		return 0;
+	}
+	if(n == 4)
+	{
+		double slope = (double)(s[j]-s[i])/(double)(j-i);
+	}
+	FOR(i,0,n-1)
+	{
+		FOR(j,i+1,n-1)
+		{	
+			int size == sl.size();
+			double slope = (double)(s[j]-s[i])/(double)(j-i);
+			sl.insert(slope);
+			if(sl.size() == size)	
+		}
+	}
+	if(modi)	cout<<"Yes"<<endl;
+	else cout<<"No"<<endl;
+	return 0;
 }

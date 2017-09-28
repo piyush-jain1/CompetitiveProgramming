@@ -42,9 +42,32 @@ ll j = p - a;    // index
 */
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+ll ax,ay,bx,by,cx,cy;	
+
 int main()
 {	
 	fast_io;
+	cin>>ax>>ay>>bx>>by>>cx>>cy;
+	ll s = (cy - by) * ax + (bx - cx) * ay + (cx * by - bx * cy);
 
+	if(s == 0)
+	{
+		cout<<"No"<<endl;
+	}
+	else
+	{	
+		ll dis1 = abs((by-ay)*(by-ay))+abs((bx-ax)*(bx-ax));
+		ll dis2 = abs((cy-by)*(cy-by))+abs((cx-bx)*(cx-bx));
+		// cout<<(by-ay)*(by-ay)<<endl;
+		// cout<<(bx-ax)*(bx-ax)<<endl;
+		// trace2(dis1, dis2);
+		if(dis1 == dis2)
+		{	
+			cout<<"Yes"<<endl;
+		}
+		else 	cout<<"No"<<endl;
+	}
+
+	return 0;
 	
 }

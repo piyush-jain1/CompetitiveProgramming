@@ -45,6 +45,20 @@ ll j = p - a;    // index
 int main()
 {	
 	fast_io;
-
-	
+	int n;	cin>>n;
+	bool first = false;
+	bool last = false;
+	REP(i,n)
+	{	
+		int temp;
+		cin>>temp;
+		if(i == 0 and temp%2 == 1)	first = true;
+		if(i == n-1 and temp%2 == 1)	last = true;
+	}
+	if(first and last and n%2 == 1)
+	{
+		cout<<"YES"<<endl;
+	}
+	else	cout<<"NO"<<endl;
+	return 0;
 }

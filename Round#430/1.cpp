@@ -45,6 +45,17 @@ ll j = p - a;    // index
 int main()
 {	
 	fast_io;
-
-	
+	ll l,r,x,y,k;	cin>>l>>r>>x>>y>>k;
+	bool modi = false;
+	FOR(b,x,y)
+	{
+		if(k*b >= l and k*b <= r)
+		{
+			modi = true;
+			break;
+		}
+	}
+	if(modi)	cout<<"YES"<<endl;
+	else	cout<<"NO"<<endl;
+	return 0;
 }

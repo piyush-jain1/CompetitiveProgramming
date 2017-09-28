@@ -45,6 +45,14 @@ ll j = p - a;    // index
 int main()
 {	
 	fast_io;
-
+	ll n,k,t;	cin>>n>>k>>t;
+	if(1)
+	{
+		if(t < k)	cout<<t<<endl;
+		else if(t <= n)	cout<<k<<endl;
+		else	cout<<k-t+n<<endl;
+	}
 	
+	
+	return 0;
 }

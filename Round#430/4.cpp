@@ -45,6 +45,75 @@ ll j = p - a;    // index
 int main()
 {	
 	fast_io;
+	int n,q;	cin>>n>>q;
+	std::vector<int> a;
+	REP(i,n)
+	{
+		int temp;	cin>>temp;
+		a.pb(temp);
+	}
+	Unique(a);
+	sort(all(a));
+	ll s = a.size();
+	map<int,int> m;
+	REP(i,s)
+	{
+		m[a[i]] = i+1;
+	}
+	// debug_array(a,a.size());
+	ll prev = 0;
+	REP(i,q)
+	{
+		ll x;	cin>>x;
+		x = prev^x;
+		trace(x);
+		ll low = 0;
+		ll high = pow(2,20);
+		bool modi = false;
+		while(low < high)
+		{
+			ll mid = low+(high-low)/2;
+			trace(mid);
+			if(mid == 0)
+			{
+				cout<<0<<endl;
+				break;	
+			}
+			ll p = mid^x;
 
-	
+			if(m[p] == 0)	
+			{	
+				if(m[mid-1] == mid)	
+				{
+					cout<<mid<<endl;
+					modi = true;
+					break;
+				}
+				else
+				{
+					high = mid-1;
+				}
+			}
+			else
+			{
+				if(m[mid] < mid)
+				{
+					high = mid;
+				}
+				else
+				{
+					low = mid;
+				}
+			}
+		}
+		trace2(high, low);
+		if(!modi)
+		{
+			if(m[high] == 0)	cout<<high<<endl;
+			else if(m[low] == 0)	cout<<low<<endl;
+		}
+		
+		prev = x;
+	}
+	return 0;
 }

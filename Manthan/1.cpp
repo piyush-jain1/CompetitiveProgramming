@@ -45,6 +45,18 @@ ll j = p - a;    // index
 int main()
 {	
 	fast_io;
+	int n;	cin>>n;
+	map<string,bool> flag;
+	REP(i,n)
+	{
+		string s;	cin>>s;
+		if(flag[s] == false)
+		{
+			cout<<"NO"<<endl;
+		}
+		else	cout<<"YES"<<endl;
+		flag[s] = true;
 
-	
+	}
+	return 0;
 }

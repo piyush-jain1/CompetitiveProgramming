@@ -45,6 +45,36 @@ ll j = p - a;    // index
 int main()
 {	
 	fast_io;
+	ll n,p,q,r;	cin>>n>>p>>q>>r;
+	ll ans;
+	ll a[n+10],a1[n+10],a2[n+10],a3[n+10];
+	FOR(i,1,n)
+	{
+		ll temp;	cin>>temp;
+		a[i] = temp;
+		if(i == 1)	a1[i] = p*temp;
+		else
+		{
+			a1[i] = max(p*temp, a1[i-1]);
+		}
+		
+		a2[i] = q*temp;
+	}
+	FORD(i,n,1)
+	{	
+		ll temp = a[i];
+		if(i == n)	a3[i] = r*temp;
+		else	
+		{
+			a3[i] = max(r*temp, a3[i+1]);
+		}	
+	}
+	ans = a1[1]+a2[1]+a3[1];
+	FOR(i,2,n)
+	{
+		ans = max(ans, a1[i]+a2[i]+a3[i]);
+	}
 
-	
+	cout<<ans<<endl;
+	return 0;
 }
