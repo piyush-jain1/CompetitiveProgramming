@@ -23,6 +23,7 @@ void pre()
     {
         fact[i] = (1LL * fact[i - 1] * i) % mod;
     }
+    ifact[N - 1] = 977041169;   // multiplicative modulo inverse of (N-1)!
     ifact[N - 1] = 977041169;
     for(ll i = N - 2 ; i >= 0 ; --i)
     {
