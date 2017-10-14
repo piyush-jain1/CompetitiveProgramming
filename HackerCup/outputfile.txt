@@ -1,0 +1,18 @@
+$ O $-node $ z_0 $ to
+$ z_1 $ via the $ G $-transition $ \tau_1 \text{ or } \tau'_1 $. As $ \tau_1\
+$ are measurement equivalent it cannot be ascertained at
+$ O $-node $
+$. The diagnoser measures the
+$ O $-node $ z_7 $ consists of the
+$ \tau'_{15} $). So the estimator
+$ O $-nodes that can be
+$ z_7 $ using the `{Reachable $ O $-node set $ RS_{z_i}' $ }
+$ RS_{z_7} $ is: $ (
+$. For each $ O $-node in $ RSz_7 $, the incoming
+$ G $-transition(s) are checked against the $ G $-transition $ \tau'_{15} $.
+$ O $-node $ z_{11} $ remains out of all the
+$ O $-node(s), that fulfills the criteria of reachability and has
+$ O $-transition $ a_{15} $ caused by $ G $-transition $
+$. So, the diagnoser marks $ z_{11} $ as its current state and
+$ O $-node $ z_{11} $ traversed by the
+$ F_i $-certain $ O $-node, the system is under fault

@@ -1,0 +1,16 @@
+ O -node  z_0 
+ z_1  via the  G -transition  \tau_1 \text{ or } \tau'_1 . As 
+ O -node 
+ O -node  z_7 
+ \tau'_{15} 
+ O 
+ z_7  using the `{Reachable  O -node set  RS_{z_i}' 
+ RS_{z_7}  is: 
+. For each  O -node in  RSz_7 
+ G -transition(s) are checked against the  G -transition  \tau'_{15} 
+ O -node  z_{11} 
+ O 
+ O -transition  a_{15}  caused by  G -transition 
+. So, the diagnoser marks  z_{11} 
+ O -node  z_{11} 
+ F_i -certain  O 
